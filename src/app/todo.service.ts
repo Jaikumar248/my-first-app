@@ -6,11 +6,11 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class TodoService {
-  // todos=[
-  //   'task1',
-  //   'task2',
-  //   'task3'
-  // ]
+  todos=[
+    'task1',
+    'task2',
+    'task3'
+  ]
 
   // todolist = new Subject()
 
