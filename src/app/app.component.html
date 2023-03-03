@@ -117,11 +117,96 @@
 {{counter}}
 <button class="btn btn-primary">click</button> -->
 
-<div class="container">
+<!-- <div class="container">
     <app-todo-form></app-todo-form>
     <app-todo-list></app-todo-list>
 </div>
 
 <div appCustomd>
    <p>wqdiudeuk</p>
+</div> -->
+<div class="card w-50 mx-auto mt-4">
+    <h4 class="card-header">Sign Up</h4>
+    <div class="card-body">
+        <form action="" #r=ngForm>
+           <div class="from-group">
+            <label>Full Name:</label>
+            <input type="text" ngModel name="fullName" class="form-control" required minlength="8">
+            <div *ngIf="r.controls['fullName']?.['touched'] && r.controls['fullName']?.['errors']" class="invalid">
+                <div *ngIf="r.controls['fullName']?.['errors']?.['required']">
+                    FullName is required
+                </div>
+                <div *ngIf="r.controls['fullName']?.['errors']?.['minlength']">
+                    FullName is minimum 8 characters
+                </div>
+
+            </div>
+           </div>
+           <div class="from-group">
+            <label>First Name:</label>
+            <input type="text" ngModel name="firstName" class="form-control" required maxlength="30">
+            <div *ngIf="r.controls['firstName']?.['touched'] && r.controls['firstName']?.['errors']" class="invaild">
+                <div *ngIf="r.controls['firstName']?.['errors']?.['required']">
+                    FirstName is required
+                </div>
+                <div *ngIf="r.controls['firstName']?.['errors']?.['maxlength']">
+                    FirstName is maximum length is 30
+                </div>
+
+            </div>
+           </div>
+           <div class="from-group">
+            <label>Last Name:</label>
+            <input type="text" ngModel name="lastName" class="form-control">
+           </div>
+           <div class="from-group">
+            <label> email:</label>
+            <input type="email" ngModel name="email" class="form-control" #email="ngModel" required email>
+            <div *ngIf="r.controls['email']?.['touched'] && r.controls['email']?.['errors']" class="invalid">
+                <div *ngIf="r.controls['email']?.['errors']?.['required']">
+                    Email is required.
+                </div>
+                <div *ngIf="r.controls['email']?.['errors']?.['email']">
+                    Email is Invalid
+                </div>
+            </div>
+           </div>
+           <div class="from-group">
+            <label>DOB:</label>
+            <input type="date" ngModel name="dob" class="form-control">
+           </div>
+           <div class="from-group">
+            <label>Gender:</label>
+            <label >
+                <input type="radio" ngModel name="gender"  value="F"> Female
+            </label>
+            <label>
+                 <input type="radio" ngModel name="gender"  value="M"> Male
+            </label>
+           </div>
+
+           <div class="from-group">
+            <label>Mobile No:</label>
+            <input type="number" ngModel name="mobile" class="form-control" required maxlength=10>
+            <div *ngIf="r.controls['mobile']?.['touched'] && r.controls['mobile']?.['errors']" class="invalid">
+                <div *ngIf="r.controls['mobile']?.['errors']?.['required']">
+                    mobile number is required
+                </div>
+                <div *ngIf="r.controls['mobile']?.['errors']?.['maxlength']">
+                    mobile is not more than 10 digits
+                </div>
+            </div>
+           </div>
+           <div class="from-group">
+            <label>Password:</label>
+            <input type="password" ngModel name="pwd" class="form-control" required>
+           </div>
+           <div class="from-group">
+            <label>confirm Password:</label>
+            <input type="password" ngModel name="cpwd" class="form-control" required>
+           </div>
+           <button class="btn btn-primary" (click)="show(r)">Register</button>
+
+        </form>
+    </div>
 </div>

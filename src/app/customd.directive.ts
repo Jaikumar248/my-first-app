@@ -1,17 +1,17 @@
 import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Validators } from '@angular/forms';
 
 @Directive({
-  selector: '[appCustomd]'
+  selector: '[appCustomd]',
+
 })
-export class CustomdDirective implements OnInit {
+export class CustomdDirective implements Validators{
   
 
-  constructor( private element: ElementRef, private renderer: Renderer2) { 
+  constructor( ) { 
    
 
   }
-  ngOnInit() {
-    this.renderer.setStyle(this.element.nativeElement, 'backroundColor','#F194&A');
-  }
+ 
 
 }

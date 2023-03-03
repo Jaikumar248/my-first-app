@@ -6,7 +6,7 @@ import { filter, from, interval, map, Observable, of, range } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title="";
   // show(fc, p, grp){
   //   console.log(fc,p);
@@ -155,48 +155,50 @@ export class AppComponent implements OnInit{
   //     ()=>console.log("complete")
   //   )
   // }
-  ngOnInit(): void {
-    from([3,5,4]).subscribe(
-      (data)=>{
-        console.log(data)
-      }
-    )
-    range(5,7).subscribe(
-      (data)=>{
-        console.log(data);
-      }
-    )
-    interval(1000).subscribe(
-      (data)=>{
-        console.log(data)
-      }
-    )
-    let obs=of(3,4,5,6,7).pipe(
-      map(
-        (data)=>{
-          return "hello"
-        }
-      )
-    )
-    obs.subscribe(
-      (data)=>{
-        console.log(data);
-      }
-    )
+  // ngOnInit(): void {
+  //   from([3,5,4]).subscribe(
+  //     (data)=>{
+  //       console.log(data)
+  //     }
+  //   )
+  //   range(5,7).subscribe(
+  //     (data)=>{
+  //       console.log(data);
+  //     }
+  //   )
+  //   interval(1000).subscribe(
+  //     (data)=>{
+  //       console.log(data)
+  //     }
+  //   )
+  //   let obs=of(3,4,5,6,7).pipe(
+  //     map(
+  //       (data)=>{
+  //         return "hello"
+  //       }
+  //     )
+  //   )
+  //   obs.subscribe(
+  //     (data)=>{
+  //       console.log(data);
+  //     }
+  //   )
 
-    let obs1=of(1,2,3,4).pipe(
-      filter(
-        (data)=>{
-          return data>2
-        }
-      )
-    )
-    obs1.subscribe(
-      (data)=>{
-        console.log("jai")
-      }
-    )
+  //   let obs1=of(1,2,3,4).pipe(
+  //     filter(
+  //       (data)=>{
+  //         return data>2
+  //       }
+  //     )
+  //   )
+  //   obs1.subscribe(
+  //     (data)=>{
+  //       console.log("jai")
+  //     }
+  //   )
+  // }
+  show(f:any){
+    console.log(f)
   }
-
 
 }
