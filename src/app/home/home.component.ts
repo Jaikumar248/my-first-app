@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { interval, of } from 'rxjs';
 
 @Component({
@@ -29,6 +29,19 @@ export class HomeComponent {
 // }
 // function next(value: number): void {
 //   throw new Error('Function not implemented.');
+
+// @Output() customeve = new EventEmitter()
+//   message = "pass to parent"
+//  p
+// }asstoParent(){
+//  this.customeve.emit(this.message)
+
+childData : string = "Data from child Component";
+@Output() childStringData = new EventEmitter();
+
+sendData(){
+  this.childStringData.emit(this.childData)
+}
 
 
 }

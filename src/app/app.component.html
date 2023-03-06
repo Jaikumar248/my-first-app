@@ -125,7 +125,11 @@
 <div appCustomd>
    <p>wqdiudeuk</p>
 </div> -->
-<div class="card w-50 mx-auto mt-4">
+
+
+
+
+<!-- <div class="card w-50 mx-auto mt-4">
     <h4 class="card-header">Sign Up</h4>
     <div class="card-body">
         <form action="" #r=ngForm>
@@ -209,4 +213,61 @@
 
         </form>
     </div>
-</div>
+</div> -->
+
+
+
+<!-- Reactive Form Validations  -->
+
+
+<!-- <form action="" [formGroup]="regForm">
+    <label for="">UserName</label>
+    <input type="text" class="form-control" formControlName="uname">
+    <div *ngIf="regForm.get('uname').touched && regForm.get('uname').hasError('required')">
+        UserName is required.
+    </div>
+    <div *ngIf="regForm.get('uname').touched && regForm.get('uname').hasError('minlength')">
+        user Name is minimum of 8 character
+    </div>
+    <label for="">email</label>
+    <input type="text" class="form-control" formControlName="email">
+    <div *ngForm="regForm.get('email').touched && regForm.get('email').hasError('required')">
+        Eamil id is required
+    </div>
+    <button class="btn btn-primary">click</button>
+</form> -->
+
+
+<!-- Form Array  -->
+
+<!-- <form action="" [formGroup]="testForm">
+    <div formArrayName="mobileNums">
+        <div *ngFor="let m of testForm.controls['mobileNums']['controls']">
+          mobileNumber {{i}}  <input type="text" forControlName="">
+        </div>
+    </div>
+   
+</form>
+<button (click)="test()">add</button> -->
+
+
+<!-- Form builder  -->
+
+<!-- <form [formGroup]="regForm1">
+    Name:<input type="text" formControlName="name">
+    EmailId:<input type="text" formControlName="email">
+   <div formArrayName="mobiles">
+    <ng-container *ngFor="let m of this.regForm1.get('mobiles')['controls']; let i = index">
+      Mobilenumber{{i+1}}  <input type="number">
+
+    </ng-container>
+
+   </div>
+</form> -->
+<!-- <button (click)="getData()">click</button>
+<h2 appCustomd>This is Heading tag</h2> -->
+<!-- <div (click)="test($event)">
+trst
+</div> -->
+
+<app-home (childStringData)="receiveData($event)"></app-home>

@@ -8,10 +8,12 @@ import { Validators } from '@angular/forms';
 export class CustomdDirective implements Validators{
   
 
-  constructor( ) { 
+  constructor(e:ElementRef ) { 
    
-
+    e.nativeElement.style.border="2px solid red"
+    e.nativeElement.style.display="none"
   }
+
  
 
 }

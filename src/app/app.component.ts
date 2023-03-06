@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { filter, from, interval, map, Observable, of, range } from 'rxjs';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -128,9 +130,9 @@ export class AppComponent {
   //   this.num=30
   // }
   // wish = "hello good evening";
-  constructor(){
+  // constructor(){
 
-  }
+  // }
   // ngAfterViewInit(): void {
   //   console.log("view init called")
   // }
@@ -197,8 +199,117 @@ export class AppComponent {
   //     }
   //   )
   // }
-  show(f:any){
-    console.log(f)
+//   show(f:any){
+//     console.log(f)
+//   }
+//   regForm = new FormGroup({
+//     uname: new FormControl("John",[Validators.required, Validators.minLength(8)] ),
+//     email: new FormControl("abc@gmail.com", [Validators.email, Validators.required])
+//   })
+  
+
+// testForm = new FormGroup({
+//   mobileNums : new FormArray(
+//     [new FormControl(),
+//     new FormControl()
+//     ]
+//   )
+// })
+
+// test() {
+//    let mobilenums = this.testForm.get('mobileNums') as FormArray
+
+//    mobilenums.push(new FormControl(null, Validators.required))
+// }
+
+// constructor( private  fb: FormBuilder){
+ 
+// }
+// regForm1 = this.fb.group({
+//   name: [null, Validators.required],
+//   email: [null, Validators.required],
+//   mobiles:this.fb.array(
+//   [
+//     [],
+//     []
+//   ]
+//   )
+// })
+
+// regForm2 = new FormGroup({
+//   username: new FormControl(null, Validators.required, this.usernameCheck)
+// })
+
+// users = [
+//   "user1", "user2", "user3"
+// ]
+// // users.indexof("user1")
+
+// usernameCheck(control): Promise<any>{
+//   let response = new Promise(
+//     (resolve, reject)=>{
+//       let name = control.value;
+
+//       if(this.users.indexOf(name)>0){
+//         resolve({"duplicateuser":true})
+//       }
+//       else {
+//         resolve(null);
+//       }
+//     }
+//   )
+//   return response
+ 
+// }
+
+// upperCaseTest(c){
+
+//   let pattern = /A-Z/
+//   if(pattern.test(c.value)){
+//     return null
+//   }
+//   return {'noupper':true}
+ 
+// }
+
+// constructor(private http:HttpClient){}
+
+// getData(){
+//   this.http.get("https://fakestoreapi.com/products?limit=5")
+//   .subscribe((data)=>{
+//     console.log(data)
+//   }
+//   )
+// }
+
+users = [
+  {
+    "id":1,
+    "name": "jai",
+    "email": "abc@gmail.com"
+  },
+  {
+    "id":2,
+    "name":"abc",
+    "email":"xyz@gmail.com"
+  },
+  {
+    "id":3,
+    "name":"abc1",
+    "email":"xyz@gmail.com"
   }
+]
+
+constructor(private http: HttpClient){
+
+}
+
+receiveData(event: string){
+console.log(event);
+}
+
+
+
+
 
 }
