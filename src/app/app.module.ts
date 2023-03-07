@@ -8,6 +8,8 @@ import { CustomdDirective } from './customd.directive';
 import { HomeComponent } from './home/home.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { PostService } from './services/post.services';
+import { LoansComponent } from './loans/loans.component';
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     AppComponent,
     CustomdDirective,
     HomeComponent,
+    LoansComponent,
     TodoFormComponent,
     TodoListComponent
   ],
@@ -22,7 +25,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
