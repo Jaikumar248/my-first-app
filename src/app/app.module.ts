@@ -6,10 +6,11 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { CustomdDirective } from './customd.directive';
 import { HomeComponent } from './home/home.component';
-import { TodoFormComponent } from './todo-form/todo-form.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
+// import { TodoFormComponent } from './todo-form/todo-form.component';
+// import { TodoListComponent } from './todo-list/todo-list.component';
 import { PostService } from './services/post.services';
 import { LoansComponent } from './loans/loans.component';
+import { PaymentsComponent } from './payments/payments.component';
 
 
 @NgModule({
@@ -18,8 +19,9 @@ import { LoansComponent } from './loans/loans.component';
     CustomdDirective,
     HomeComponent,
     LoansComponent,
-    TodoFormComponent,
-    TodoListComponent
+    PaymentsComponent
+    // TodoFormComponent,
+    // TodoListComponent
   ],
   imports: [
     BrowserModule,

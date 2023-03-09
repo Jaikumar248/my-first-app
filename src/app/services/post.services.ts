@@ -41,4 +41,8 @@ export class PostService {
     this.http.delete('https://complete-http-request-default-rtdb.firebaseio.com/products.json')
     .subscribe();
    }
+   updateProduct(id: string, value: LoanProducts){
+    this.http.put('https://complete-http-request-default-rtdb.firebaseio.com/products/'+id+'.json',value )
+    .subscribe()
+   }
 }
