@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoService } from '../todo.service';
 
 @Component({
@@ -15,5 +15,18 @@ export class PaymentsComponent implements OnInit {
       console.log(data)
     })
   }
+
+  data="Pass to data using view child";
+
+  passToParent(){
+    return this.data;
+  }
+  @Output() parent = new EventEmitter();
+  message="passing the data using output"
+  passToParentOutput(){
+    this.parent.emit(this.message);
+  }
+
+  @Input() d1 
 
 }

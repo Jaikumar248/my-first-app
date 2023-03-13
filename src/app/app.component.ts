@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup,FormBuilder, Validators } from '@angular/forms';
-import { filter, from, interval, map, Observable, of, range } from 'rxjs';
+import { filter, from, interval, map, Observable, of, range, merge } from 'rxjs';
+import { PaymentsComponent } from './payments/payments.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title="";
   // show(fc, p, grp){
   //   console.log(fc,p);
@@ -303,9 +304,36 @@ users = [
 constructor(private http: HttpClient){
 
 }
+ 
+cdata;
 
 receiveData(event: string){
 console.log(event);
+}
+@ViewChild(PaymentsComponent) payment
+
+test(){
+  this.payment.passToParent()
+}
+data1="this is parent data sending to child component using input decorator"
+
+@ViewChild("div")  d
+
+changediv(){
+  this.d.nativeElement.style.background="red";
+
+}
+
+obs1 = of(2,4,5,67);
+obs2 = from(["z","y","x"]);
+obs3 = merge(this.obs1, this.obs2);
+
+ngOnInit(): void {
+  this.obs3.subscribe(
+    (data)=>{
+      console.log(data)
+    }
+  )
 }
 
 

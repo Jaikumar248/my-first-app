@@ -276,4 +276,11 @@ trst
 
 <!-- <app-todo-form></app-todo-form>
 <app-todo-list></app-todo-list> -->
-<app-payments></app-payments>
+{{cdata}}
+<app-payments [d1]="data1"></app-payments>
+
+<button (click)="
+test()">click</button>
+
+<div #div >this is the div element</div>
+<button (click)="changediv()">submit</button>
